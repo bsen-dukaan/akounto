@@ -105,7 +105,7 @@ const fetchDocumentStats = async () => {
 };
 
 const fetchCustomers = async () => {
-  const response = await useNuxtApp().$api.customers.list(companyId, 1, -1);
+  const response = await useNuxtApp().$api.customers.list(companyId, 1, 0); // Changed -1 to 0 to avoid negative limit
   customers.value = response.data.results;
 };
 
