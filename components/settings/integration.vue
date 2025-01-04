@@ -191,7 +191,7 @@ export default {
 
         // Match exactly with your backend endpoint
         const response = await fetch(
-          `http://localhost:4000/api/delete-quickbooks-integration/${companyId}`,
+          `http://app.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
           {
             method: "GET",
             headers: {

@@ -116,7 +116,7 @@ async function handleDisconnect() {
     if (!companyId) throw new Error("Company ID not found");
 
     const response = await fetch(
-      `http://localhost:4000/api/delete-quickbooks-integration/${companyId}`,
+      `https://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
       {
         method: "GET",
         headers: {
