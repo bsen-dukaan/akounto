@@ -156,11 +156,11 @@ export default {
         console.log("Integration status response:", response); // Debug log
 
         // Update integration details based on response
-        if (response.data && response.data.length > 0) {
+        if (response.data && response.data.integrationStatus === "Connected") {
           // Find QuickBooks integration if multiple integrations exist
-          const qbIntegration =
-            response.data.find((int) => int.type === "quickbooks") ||
-            response.data[0];
+          // const qbIntegration =
+          //   response.data.find((int) => int.type === "quickbooks") ||
+          //   response.data[0];
 
           this.isConnected = true;
           this.integrationId = qbIntegration.id || qbIntegration.integrationId;
@@ -175,7 +175,7 @@ export default {
       } catch (error) {
         console.error("Status check error:", error);
         this.error = "Failed to check integration status.";
-        this.isConnected = false;
+        // this.isConnected = false;
       } finally {
         this.isLoading = false;
       }
