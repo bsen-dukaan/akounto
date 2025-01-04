@@ -191,11 +191,11 @@ export default {
 
         // Match exactly with your backend endpoint
         const response = await fetch(
-          `http://app.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
+          `http://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
           {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              Authorization: `${localStorage.getItem("token")}`,
               "Content-Type": "application/json",
             },
           },
