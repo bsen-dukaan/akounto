@@ -191,7 +191,7 @@ export default {
 
         // Match exactly with your backend endpoint
         const response = await fetch(
-          `http://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
+          `https://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
           {
             method: "POST",
             headers: {

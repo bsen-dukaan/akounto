@@ -120,7 +120,7 @@ async function handleDisconnect() {
       `https://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
       { userId: jwtDecode(localStorage.getItem("token"))?.id },
       {
-        method: "GET",
+        method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",
