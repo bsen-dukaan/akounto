@@ -48,7 +48,7 @@
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white">
               <tr
-                v-for="invoice in documents"
+                v-for="invoice in documents.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))"
                 :key="invoice.id"
                 class="bg-white"
               >
