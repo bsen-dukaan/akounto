@@ -193,7 +193,7 @@ export default {
         const response = await fetch(
           `http://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
           {
-            method: "GET",
+            method: "POST",
             headers: {
               Authorization: `${localStorage.getItem("token")}`,
               "Content-Type": "application/json",

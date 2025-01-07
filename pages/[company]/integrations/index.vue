@@ -58,6 +58,7 @@
 </template>
 
 <script setup>
+import { jwtDecode } from "jwt-decode";
 import { ref, onMounted } from "vue";
 
 const route = useRoute();
@@ -117,6 +118,7 @@ async function handleDisconnect() {
 
     const response = await fetch(
       `https://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
+      { userId: jwtDecode(localStorage.getItem("token"))?.id },
       {
         method: "GET",
         headers: {
