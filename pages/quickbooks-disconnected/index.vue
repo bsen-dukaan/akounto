@@ -82,6 +82,6 @@
 
 <script setup>
 definePageMeta({
-  layout: false,
+  layout: "blank",
 });
 </script>
