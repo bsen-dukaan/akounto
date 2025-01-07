@@ -23,10 +23,10 @@
         <p class="text-lg mb-4 text-gray-600">
           Your QuickBooks integration has been disconnected. You will no longer
           to be able to send invoices directly to your QuickBooks account from
-          Tradify.
+          Akounto.
         </p>
         <p class="text-lg text-gray-600">
-          If you'd like to re-connect Tradify and your QuickBooks account,
+          If you'd like to re-connect Akounto and your QuickBooks account,
           <NuxtLink
             to="/account/integrations"
             class="text-indigo-600 hover:text-indigo-700 hover:underline"
