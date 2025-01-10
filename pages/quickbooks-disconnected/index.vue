@@ -44,12 +44,13 @@
         <p class="text-lg text-gray-600">
           If you'd like to re-connect Akounto and your QuickBooks account,
           <NuxtLink
-            to="/account/integrations"
-            class="text-indigo-600 hover:text-indigo-700 hover:underline"
+            @click="handleLogout"
+            class="text-indigo-600 hover:text-indigo-700 hover:underline cursor-pointer"
+            :class="{ 'opacity-50 pointer-events-none': isLoading }"
           >
-            click here
+            {{ isLoading ? "Redirecting..." : "click here" }}
           </NuxtLink>
-          to view our help guide.
+          to login and connect again
         </p>
       </div>
 
@@ -100,4 +101,13 @@
 definePageMeta({
   layout: "blank",
 });
+
+const router = useRouter();
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("companyID");
+
+  router.push("/auth/login");
+};
 </script>
