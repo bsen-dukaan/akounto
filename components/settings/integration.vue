@@ -219,7 +219,7 @@ export default {
 
         // Now make the disconnect request
         const response = await fetch(
-          `http://localhost:4000/api/delete-quickbooks-integration/${companyId}`,
+          `https://api.kounto.ai/api/delete-quickbooks-integration/${companyId}`,
           {
             method: "POST",
             headers: {
