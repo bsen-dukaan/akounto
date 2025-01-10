@@ -157,11 +157,27 @@
       >
         <div class="flex h-16 shrink-0 items-center">
           <NuxtLink to="/"
-            ><img
-              class="h-8 w-auto"
-              src="https://www.akounto.com/images/logo.svg"
-              alt="Your Company"
-          /></NuxtLink>
+            ><div class="flex items-center justify-end gap-2 element-highlight">
+            <img
+              class="h-8 w-auto transition-opacity duration-300 opacity-100"
+              src="https://dms.mydukaan.io/original/webp/media/79927748-92f3-4505-9bd0-9dc14b81b700.png"
+              alt="Logo"
+              loading="lazy"
+            />
+            <span
+              class="font-bold text-xl md:text-2xl lg:text-3xl element-highlight"
+              style="
+                display: inline-flex;
+                align-items: baseline;
+                line-height: 2;
+                background: linear-gradient(45deg, #5B53FD, #9F7AEA);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+              "
+              >Kounto AI</span
+            >
+          </div></NuxtLink>
         </div>
 
         <nav class="flex flex-1 flex-col">
