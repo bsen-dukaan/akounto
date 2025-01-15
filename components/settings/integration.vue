@@ -61,7 +61,6 @@
             viewBox="0 0 223 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class="mr-2"
           >
             <rect width="223" height="36" rx="4" fill="#2CA01C" />
             <path
