@@ -86,7 +86,7 @@ const integrations = ref([
 
 const selectedIntegration = ref({
   id: 1,
-  name: "Quickbooks",
+  name: "QuickBooks",
   logo: "quickBooks.com",
 });
 
