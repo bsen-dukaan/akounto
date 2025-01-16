@@ -63,7 +63,7 @@ export default {
         },
 
         {
-          name: "Connect with QuickBooks",
+          name: "Connect to QuickBooks",
           description: "to automatically sync your data",
           href: "#",
           status: "upcoming",

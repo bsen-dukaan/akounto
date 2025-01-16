@@ -58,7 +58,7 @@ const steps = ref([
     actionText: "",
   },
   {
-    label: "Connect QuickBooks",
+    label: "Connect to QuickBooks",
     icon: CreditCardIcon,
     completed: false,
     description: "Link your QuickBooks account for seamless integration.",

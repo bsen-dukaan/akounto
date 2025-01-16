@@ -168,7 +168,13 @@ export default {
   },
   methods: {
     formatFeature(key, value) {
+      const specialCases = {
+        quickbooks_sync: "QuickBooks Sync",
+      };
       if (typeof value === "boolean") {
+        if (specialCases[key]) {
+          return specialCases[key];
+        }
         return key
           .split("_")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
