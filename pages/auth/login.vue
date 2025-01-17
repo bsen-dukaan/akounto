@@ -55,14 +55,9 @@
               <span v-if="isRegistering">Logging In...</span>
               <span v-else>Log In</span>
             </button>
-            <div v-if="error" class="mb-4 text-center">
-              <span
-                class="inline-block py-2 px-4 text-base text-red-600 bg-red-100 rounded-lg"
-              >
-                {{ error }}
-              </span>
-            </div>
           </form>
+          <Snackbar v-model="showError" :message="error" />
+
           <p class="text-center">
             <span class="text-xs font-medium">Don't have an account?</span>
             <NuxtLink
@@ -129,6 +124,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useNuxtApp } from "#app";
 import { onMounted } from "vue";
+import Snackbar from "~/components/shared/snackbar.vue";
 
 const name = ref("");
 const email = ref("");
@@ -137,7 +133,8 @@ const router = useRouter();
 const { $api } = useNuxtApp();
 
 const isRegistering = ref(false);
-const error = ref(null);
+const showError = ref(false);
+const error = ref("");
 
 const token = process.client ? localStorage.getItem("token") || "" : "";
 
@@ -149,7 +146,10 @@ onMounted(() => {
 
 watch(error, (newValue) => {
   if (newValue) {
-    // Handle the error state here, e.g., show an error message
+    showError.value = true;
+    setTimeout(() => {
+      showError.value = false;
+    }, 3000);
     console.error("Registration Error:", newValue);
   }
 });
@@ -171,10 +171,14 @@ const login = async () => {
       router.push("/");
     } else {
       error.value = "Unable to create account :  " + user.message;
+      showError.value = true;
     }
-  } catch (error) {
+  } catch (err) {
     isRegistering.value = false;
-    console.error("Registration failed:", error);
+    console.error("Registration failed:", err);
+    error.value =
+      err.response?.data?.message || "Registration failed. Please try again.";
+    showError.value = true;
   }
 };
 definePageMeta({
